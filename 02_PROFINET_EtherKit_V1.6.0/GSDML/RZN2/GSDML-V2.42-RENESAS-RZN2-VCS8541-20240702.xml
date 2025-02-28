@@ -1,0 +1,1266 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- *****************************************************************
+	File:       	GSDML-V2.42-RENESAS-RZN2-VCS8541-20240702.xml
+	Language:   	en
+	Project:    	Renesas RZN2 PROFINET-IO, 
+	Device Family:	RZN2 Evaluation Board / Development Kit
+	Author:			Renesas Electronics Corporation
+					www.renesas.com
+	Date:	    	02.07.2024
+	**************************************************************
+	Copyright(C) 2024 Renesas Electronics Corporation
+	************************************************************** -->
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.42.xsd">
+	<!-- ProfileHeader Definition as defined in ISO15745-1. Please do not change the content. -->
+	<ProfileHeader>
+		<ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+		<ProfileRevision>1.00</ProfileRevision>
+		<ProfileName>Device Profile for PROFINET Devices</ProfileName>
+		<ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+		<ProfileClassID>Device</ProfileClassID>
+		<ISO15745Reference>
+			<ISO15745Part>4</ISO15745Part>
+			<ISO15745Edition>1</ISO15745Edition>
+			<ProfileTechnology>GSDML</ProfileTechnology>
+		</ISO15745Reference>
+	</ProfileHeader>
+	<ProfileBody>
+		<DeviceIdentity VendorID="0x02C7" DeviceID="0x0003">
+			<InfoText TextId="TOK_DevIdent_InfoText"/>
+			<VendorName Value="Renesas Electronics"/>
+		</DeviceIdentity>
+		<DeviceFunction>
+			<Family MainFamily="I/O" ProductFamily="RSK"/>
+		</DeviceFunction>
+		<ApplicationProcess>
+			<DeviceAccessPointList>
+	            <!-- ============================================ -->
+	            <!--                  DAP1: no PDEV               -->
+	            <!-- ============================================ -->
+				<!--
+				<DeviceAccessPointItem ID="DAP 1" PhysicalSlots="0..8" ModuleIdentNumber="0x00000001" MinDeviceInterval="32" ImplementationType="RZN2" DNS_CompatibleName="rzn2" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="false" NameOfStationNotTransferable="false" CheckDeviceID_Allowed="true" IOXS_Required="false" RequiredSchemaVersion="V1.0" PNIO_Version="V2.0" AddressAssignment="LOCAL;DCP">
+					<ModuleInfo CategoryRef="ID_RZN2">
+						<Name TextId="TOK_Standard_no_PDEV"/>
+						<InfoText TextId="TOK_ModInfo_InfoTextId_DAP1"/>
+						<VendorName Value="Renesas Electronics"/>
+						<OrderNumber Value="RSK-RZN2-PNIO-XXXX"/>
+						<HardwareRelease Value="100"/>
+						<SoftwareRelease Value="V1.4.1"/>
+					</ModuleInfo>
+					<IOConfigData MaxInputLength="1440" MaxOutputLength="1440"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_01" AllowedInSlots="1..8"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_02" AllowedInSlots="1..8"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_03" AllowedInSlots="1..8"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_10" AllowedInSlots="1..8"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_11" AllowedInSlots="1..8"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_12" AllowedInSlots="1..8"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_16" AllowedInSlots="1..8"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_17" AllowedInSlots="1..8"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_18" AllowedInSlots="1..8"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP 1" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+						<IOData/> <ModuleInfo><Name TextId="TOK_Standard_no_PDEV"/><InfoText TextId="TOK_ModInfo_InfoTextId_DAP1"/></ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ID_Graph_1"/>
+					</Graphics>
+					<AssetManagement/>
+				</DeviceAccessPointItem>
+				 -->
+	            <!-- ============================================ -->
+	            <!--                  DAP2: Standard no MRP       -->
+	            <!-- ============================================ -->
+				<!--
+				<DeviceAccessPointItem ID="DAP 2" PhysicalSlots="0..16" ModuleIdentNumber="0x00000002" MinDeviceInterval="8" ImplementationType="RZN2" DNS_CompatibleName="rzn2" FixedInSlots="0" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" SharedDeviceSupported="true" DeviceAccessSupported="true" NumberOfDeviceAccessAR="1" MaxSupportedRecordSize="8192" NameOfStationNotTransferable="true" ParameterizationSpeedupSupported="true" LLDP_NoD_Supported="true" ResetToFactoryModes="2" CheckDeviceID_Allowed="true" PowerOnToCommReady="20000" IOXS_Required="false" RequiredSchemaVersion="V2.4" PNIO_Version="V2.42" AddressAssignment="LOCAL;DCP" AdaptsRealIdentification="true">
+					<ModuleInfo CategoryRef="ID_RZN2">
+						<Name TextId="TOK_Standard_no_MRP"/>
+						<InfoText TextId="TOK_ModInfo_InfoTextId_DAP2"/>
+						<VendorName Value="Renesas Electronics"/>
+						<OrderNumber Value="RSK-RZN2-PNIO-XXXX"/>
+						<HardwareRelease Value="100"/>
+						<SoftwareRelease Value="V1.4.1"/>
+					</ModuleInfo>
+					<CertificationInfo ConformanceClass="C" ApplicationClass="Isochronous" NetloadClass="III"/>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000"/>
+						<SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001"/>
+						<SubslotItem SubslotNumber="32770" TextId="TOK_Subslot_8002"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="1440" MaxOutputLength="1440" MaxDataLength="2880"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_01" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_02" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_03" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_10" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_11" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_12" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_16" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_17" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_18" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_50" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_51" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_52" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_53" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_60" AllowedInSlots="1..16"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP 2" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" IM5_Supported="true" MayIssueProcessAlarm="false">
+							<IOData/> <ModuleInfo><Name TextId="TOK_Standard_no_MRP"/><InfoText TextId="TOK_ModInfo_InfoTextId_DAP2"/></ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="IDS_2I" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedDelayMeasurements="PTCP" IsochroneModeSupported="true" IsochroneModeInRT_Classes="RT_CLASS_3" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_3" TextId="TOK_DAP_InterfaceModule" SupportedProtocols="SNMP;LLDP" NetworkComponentDiagnosisSupported="true" PTP_BoundarySupported="true" DCP_BoundarySupported="true" MulticastBoundarySupported="true" DCP_HelloSupported="true" MaxFrameStartTime="1600" MinNRT_Gap="960" DelayMeasurementSupported="true" Writeable_IM_Records="1 2 3 4" IM5_Supported="true">
+							<RT_Class3Properties ForwardingMode="Relative" MaxBridgeDelay="3960" MaxBridgeDelayFFW="1024" MaxRangeIR_FrameID="1024" MaxNumberIR_FrameData="1024" StartupMode="Legacy;Advanced" MaxDFP_Frames="0" FragmentationType="Static" MaxRedPeriodLength="4000" MinFSO="5000" MinRTC3_Gap="2000" MinYellowTime="100240" YellowSafetyMargin="160" DFP_OutboundTruncationSupported="false" MaxRetentionTime="30000"/>
+							<SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="300" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP" PeerToPeerJitter="250"/>
+							<ApplicationRelations NumberOfAR="2" StartupMode="Legacy;Advanced" NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="true">
+							<TimingProperties ReductionRatio="1 2 4 8 16 32 64 128 256 512" SendClock="8 16 32 64 128"/>
+							<RT_Class3TimingProperties ReductionRatioPow2="2 4 8 16" SendClock="8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128" ReductionRatio="1"/>
+							</ApplicationRelations>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="IDS_2P1" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" TextId="TOK_Port1" MaxPortRxDelay="603" MaxPortTxDelay="427" MAUType="100BASETXFD" MAUTypes="16" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" ShortPreamble100MBitSupported="false" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true" Writeable_IM_Records="1 2 3 4" IM5_Supported="true">
+						<MAUTypeList>
+								<MAUTypeItem Value="16" AdjustSupported="true"/>
+							</MAUTypeList>
+						 </PortSubmoduleItem>
+						<PortSubmoduleItem ID="IDS_2P2" SubslotNumber="32770" SubmoduleIdentNumber="0x0003" TextId="TOK_Port2" MaxPortRxDelay="603" MaxPortTxDelay="427" MAUType="100BASETXFD" MAUTypes="16" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" ShortPreamble100MBitSupported="false" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true" Writeable_IM_Records="1 2 3 4" IM5_Supported="true">
+						<MAUTypeList>
+								<MAUTypeItem Value="16" AdjustSupported="true"/>
+							</MAUTypeList>
+						 </PortSubmoduleItem>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ID_Graph_2"/>
+					</Graphics>
+					<AssetManagement/>
+				</DeviceAccessPointItem>
+				 -->
+	            <!-- ============================================ -->
+	            <!--                  DAP3: Standard MRP      (fits to example device code)          -->
+	            <!-- ============================================ -->
+				<DeviceAccessPointItem ID="DAP 3" PhysicalSlots="0..16" ModuleIdentNumber="0x00000003" MinDeviceInterval="8" ImplementationType="RZN2" DNS_CompatibleName="rzn2" FixedInSlots="0" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" SharedDeviceSupported="true" DeviceAccessSupported="true" NumberOfDeviceAccessAR="1" MaxSupportedRecordSize="8192" NameOfStationNotTransferable="true" ParameterizationSpeedupSupported="true" LLDP_NoD_Supported="true" ResetToFactoryModes="2" CheckDeviceID_Allowed="true" PowerOnToCommReady="20000" IOXS_Required="false" RequiredSchemaVersion="V2.4" PNIO_Version="V2.42" AddressAssignment="LOCAL;DCP" AdaptsRealIdentification="true">
+					<ModuleInfo CategoryRef="ID_RZN2">
+						<Name TextId="TOK_Standard_MRP"/>
+						<InfoText TextId="TOK_ModInfo_InfoTextId_DAP3"/>
+						<VendorName Value="Renesas Electronics"/>
+						<OrderNumber Value="RSK-RZN2-PNIO-XXXX"/>
+						<HardwareRelease Value="100"/>
+						<SoftwareRelease Value="V1.4.1"/>
+					</ModuleInfo>
+					<CertificationInfo ConformanceClass="C" ApplicationClass="Isochronous" NetloadClass="III"/>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000"/>
+						<SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001"/>
+						<SubslotItem SubslotNumber="32770" TextId="TOK_Subslot_8002"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="1440" MaxOutputLength="1440" MaxDataLength="2880"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_01" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_02" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_03" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_10" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_11" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_12" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_16" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_17" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_18" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_50" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_51" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_52" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_53" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_60" AllowedInSlots="1..16"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP 3" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" IM5_Supported="true" MayIssueProcessAlarm="false">
+							<IOData/> <ModuleInfo><Name TextId="TOK_Standard_MRP"/><InfoText TextId="TOK_ModInfo_InfoTextId_DAP3"/></ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="IDS_3I" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedDelayMeasurements="PTCP" IsochroneModeSupported="true" IsochroneModeInRT_Classes="RT_CLASS_3" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_3" TextId="TOK_DAP_InterfaceModule" SupportedProtocols="SNMP;LLDP" NetworkComponentDiagnosisSupported="true" PTP_BoundarySupported="true" DCP_BoundarySupported="true" MulticastBoundarySupported="true" DCP_HelloSupported="true" MaxFrameStartTime="1600" MinNRT_Gap="960" DelayMeasurementSupported="true" Writeable_IM_Records="1 2 3 4" IM5_Supported="true">						
+							<RT_Class3Properties ForwardingMode="Relative" MaxBridgeDelay="3960" MaxBridgeDelayFFW="1024" MaxRangeIR_FrameID="1024" MaxNumberIR_FrameData="1024" StartupMode="Legacy;Advanced" MaxDFP_Frames="0" FragmentationType="Static" MaxRedPeriodLength="4000" MinFSO="5000" MinRTC3_Gap="2000" MinYellowTime="100240" YellowSafetyMargin="160" DFP_OutboundTruncationSupported="false" MaxRetentionTime="30000"/>
+							<SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="300" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP" PeerToPeerJitter="250"/>
+							<ApplicationRelations NumberOfAR="2" StartupMode="Legacy;Advanced" NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="true">
+							<TimingProperties ReductionRatio="1 2 4 8 16 32 64 128 256 512" SendClock="8 16 32 64 128"/>
+							<RT_Class3TimingProperties ReductionRatioPow2="2 4 8 16" SendClock="8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128" ReductionRatio="1"/>
+							</ApplicationRelations>
+                            <MediaRedundancy SupportedRole="Client" MRPD_Supported="false"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="IDS_3P1" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" TextId="TOK_Port1" MaxPortRxDelay="603" MaxPortTxDelay="427" IsDefaultRingport="true" MAUType="100BASETXFD" MAUTypes="16" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" ShortPreamble100MBitSupported="false" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true" Writeable_IM_Records="1 2 3 4" IM5_Supported="true">
+							<MAUTypeList>
+								<MAUTypeItem Value="16" AdjustSupported="true"/>
+							</MAUTypeList>
+						 </PortSubmoduleItem>
+						<PortSubmoduleItem ID="IDS_3P2" SubslotNumber="32770" SubmoduleIdentNumber="0x0003" TextId="TOK_Port2" MaxPortRxDelay="603" MaxPortTxDelay="427" IsDefaultRingport="true" MAUType="100BASETXFD" MAUTypes="16" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" ShortPreamble100MBitSupported="false" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true" Writeable_IM_Records="1 2 3 4" IM5_Supported="true">
+							<MAUTypeList>
+								<MAUTypeItem Value="16" AdjustSupported="true"/>
+							</MAUTypeList>
+						 </PortSubmoduleItem>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ID_Graph_3"/>
+					</Graphics>
+					<AssetManagement/>
+				</DeviceAccessPointItem>
+			<!-- ============================================ -->
+	        <!--                  DAP4: Standard 1 Port      (fits to example device code)          -->
+	        <!-- ============================================ -->
+	        <!--
+			<DeviceAccessPointItem ID="DAP 4" PhysicalSlots="0..16" ModuleIdentNumber="0x00000004" MinDeviceInterval="8" ImplementationType="RZN2" DNS_CompatibleName="rzn2" FixedInSlots="0" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" SharedDeviceSupported="true" DeviceAccessSupported="true" NumberOfDeviceAccessAR="1" MaxSupportedRecordSize="8192" NameOfStationNotTransferable="true" ParameterizationSpeedupSupported="true" LLDP_NoD_Supported="true" ResetToFactoryModes="2" CheckDeviceID_Allowed="true" PowerOnToCommReady="20000" IOXS_Required="false" RequiredSchemaVersion="V2.4" PNIO_Version="V2.42" AddressAssignment="LOCAL;DCP" AdaptsRealIdentification="true">
+					<ModuleInfo CategoryRef="ID_RZN2">
+						<Name TextId="TOK_Standard_1Port"/>
+						<InfoText TextId="TOK_ModInfo_InfoTextId_DAP4"/>
+						<VendorName Value="Renesas Electronics"/>
+						<OrderNumber Value="RSK-RZN2-PNIO-XXXX"/>
+						<HardwareRelease Value="100"/>
+						<SoftwareRelease Value="V1.4.1"/>
+					</ModuleInfo>
+					<CertificationInfo ConformanceClass="C" ApplicationClass="Isochronous" NetloadClass="III"/>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000"/>
+						<SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="1440" MaxOutputLength="1440" MaxDataLength="2880"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_01" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_02" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_03" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_10" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_11" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_12" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_16" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_17" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_18" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_50" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_51" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_52" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_53" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_60" AllowedInSlots="1..16"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP 4" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" IM5_Supported="true" MayIssueProcessAlarm="false">
+							<IOData/> <ModuleInfo><Name TextId="TOK_Standard_1Port"/><InfoText TextId="TOK_ModInfo_InfoTextId_DAP4"/></ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="IDS_4I" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedDelayMeasurements="PTCP" IsochroneModeSupported="true" IsochroneModeInRT_Classes="RT_CLASS_3" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_3" TextId="TOK_DAP_InterfaceModule" SupportedProtocols="SNMP;LLDP" NetworkComponentDiagnosisSupported="true" PTP_BoundarySupported="true" DCP_BoundarySupported="true" MulticastBoundarySupported="true" DCP_HelloSupported="true" MaxFrameStartTime="1600" MinNRT_Gap="960" DelayMeasurementSupported="true" Writeable_IM_Records="1 2 3 4" IM5_Supported="true">						
+							<RT_Class3Properties ForwardingMode="Relative" MaxBridgeDelay="3960" MaxBridgeDelayFFW="1024" MaxRangeIR_FrameID="1024" MaxNumberIR_FrameData="1024" StartupMode="Legacy;Advanced" MaxDFP_Frames="0" FragmentationType="Static" MaxRedPeriodLength="4000" MinFSO="5000" MinRTC3_Gap="2000" MinYellowTime="100240" YellowSafetyMargin="160" DFP_OutboundTruncationSupported="false" MaxRetentionTime="30000"/>
+							<SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="300" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP" PeerToPeerJitter="250"/>
+							<ApplicationRelations NumberOfAR="2" StartupMode="Legacy;Advanced" NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="true">
+							<TimingProperties ReductionRatio="1 2 4 8 16 32 64 128 256 512" SendClock="8 16 32 64 128"/>
+							<RT_Class3TimingProperties ReductionRatioPow2="2 4 8 16" SendClock="8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128" ReductionRatio="1"/>
+							</ApplicationRelations>
+                           						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="IDS_4P1" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" TextId="TOK_Port1" MaxPortRxDelay="603" MaxPortTxDelay="427" MAUType="100BASETXFD" MAUTypes="16" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" ShortPreamble100MBitSupported="false" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true" Writeable_IM_Records="1 2 3 4" IM5_Supported="true">
+							<MAUTypeList>
+								<MAUTypeItem Value="16" AdjustSupported="true"/>
+							</MAUTypeList>
+						 </PortSubmoduleItem>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ID_Graph_4"/>
+					</Graphics>
+					<AssetManagement/>
+			</DeviceAccessPointItem>
+			 -->
+				<!-- ============================================ -->
+	            <!--                  DAP7: Standard MRP with S2      (fits to example device code)          -->
+	            <!-- ============================================ -->
+				<DeviceAccessPointItem ID="DAP 7" PhysicalSlots="0..16" ModuleIdentNumber="0x00000007" MinDeviceInterval="8" ImplementationType="RZN2" DNS_CompatibleName="rzn2" FixedInSlots="0" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" SharedDeviceSupported="true" DeviceAccessSupported="true" NumberOfDeviceAccessAR="1" MaxSupportedRecordSize="8192" NameOfStationNotTransferable="true" ParameterizationSpeedupSupported="true" LLDP_NoD_Supported="true" ResetToFactoryModes="2" CheckDeviceID_Allowed="true" PowerOnToCommReady="20000" IOXS_Required="false" RequiredSchemaVersion="V2.4" PNIO_Version="V2.42" PrmBeginPrmEndSequenceSupported="true" AddressAssignment="LOCAL;DCP">
+					<ModuleInfo CategoryRef="ID_RZN2">
+						<Name TextId="TOK_Standard_MRP_S2"/>
+						<InfoText TextId="TOK_ModInfo_InfoTextId_DAP7"/>
+						<VendorName Value="Renesas Electronics"/>
+						<OrderNumber Value="RSK-RZN2-PNIO-XXXX"/>
+						<HardwareRelease Value="100"/>
+						<SoftwareRelease Value="V1.4.1"/>
+					</ModuleInfo>
+					<CertificationInfo ConformanceClass="C" ApplicationClass="Isochronous" NetloadClass="III"/>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000"/>
+						<SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001"/>
+						<SubslotItem SubslotNumber="32770" TextId="TOK_Subslot_8002"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="1440" MaxOutputLength="1440" MaxDataLength="2880"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_01" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_02" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_03" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_10" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_11" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_12" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_16" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_17" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_18" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_50" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_51" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_52" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_53" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_60" AllowedInSlots="1..16"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP 7" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" IM5_Supported="true" MayIssueProcessAlarm="false">
+							<IOData/> <ModuleInfo><Name TextId="TOK_Standard_MRP_S2"/><InfoText TextId="TOK_ModInfo_InfoTextId_DAP7"/></ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="IDS_7I" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedDelayMeasurements="PTCP" IsochroneModeSupported="true" IsochroneModeInRT_Classes="RT_CLASS_3" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_3" TextId="TOK_DAP_InterfaceModule" SupportedProtocols="SNMP;LLDP" NetworkComponentDiagnosisSupported="true" PTP_BoundarySupported="true" DCP_BoundarySupported="true" MulticastBoundarySupported="true" DCP_HelloSupported="true" MaxFrameStartTime="1600" MinNRT_Gap="960" DelayMeasurementSupported="true" Writeable_IM_Records="1 2 3 4" IM5_Supported="true" PDEV_CombinedObjectSupported="true">
+							<RT_Class3Properties ForwardingMode="Relative" MaxBridgeDelay="3960" MaxBridgeDelayFFW="1024" MaxNumberIR_FrameData="1024" MaxRangeIR_FrameID="1024" StartupMode="Legacy;Advanced" MaxDFP_Frames="0" FragmentationType="Static" MaxRedPeriodLength="4000" MinFSO="5000" MinRTC3_Gap="2000" MinYellowTime="100240" YellowSafetyMargin="160"/>
+							<SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="300" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP" PeerToPeerJitter="250"/>
+							<ApplicationRelations NumberOfAR="4" StartupMode="Legacy;Advanced" NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="true">
+							<TimingProperties ReductionRatio="1 2 4 8 16 32 64 128 256 512" SendClock="8 16 32 64 128"/>
+							<RT_Class3TimingProperties ReductionRatioPow2="2 4 8 16" SendClock="8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128" ReductionRatio="1"/>
+							</ApplicationRelations>
+                            <MediaRedundancy SupportedRole="Client" MRPD_Supported="false" AdditionalForwardingRulesSupported="true"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="IDS_7P1" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" TextId="TOK_Port1" MaxPortRxDelay="603" MaxPortTxDelay="427" IsDefaultRingport="true" MAUType="100BASETXFD" MAUTypes="16" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" ShortPreamble100MBitSupported="false" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true" Writeable_IM_Records="1 2 3 4" IM5_Supported="true">
+							<MAUTypeList>
+								<MAUTypeItem Value="16" AdjustSupported="true"/>
+							</MAUTypeList>
+						 </PortSubmoduleItem>
+						<PortSubmoduleItem ID="IDS_7P2" SubslotNumber="32770" SubmoduleIdentNumber="0x0003" TextId="TOK_Port2" MaxPortRxDelay="603" MaxPortTxDelay="427" IsDefaultRingport="true" MAUType="100BASETXFD" MAUTypes="16" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" ShortPreamble100MBitSupported="false" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true" Writeable_IM_Records="1 2 3 4" IM5_Supported="true">
+							<MAUTypeList>
+								<MAUTypeItem Value="16" AdjustSupported="true"/>
+							</MAUTypeList>
+						 </PortSubmoduleItem>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ID_Graph_7"/>
+					</Graphics>
+					<AssetManagement/>
+					<SystemRedundancy NumberOfAR_Sets="1" RT_InputOnBackupAR_Supported="false" MaxSwitchOverTime="30" DeviceTypes="S2" DeviceType="S2"/>
+				</DeviceAccessPointItem>			
+				<!-- ============================================ -->
+	            <!--                  DAP8: Standard MRP with S2 and DR (CiR)     (fits to example device code)          -->
+	            <!-- ============================================ -->
+				<DeviceAccessPointItem ID="DAP 8" PhysicalSlots="0..16" ModuleIdentNumber="0x00000008" MinDeviceInterval="8" ImplementationType="RZN2" DNS_CompatibleName="rzn2" FixedInSlots="0" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" SharedDeviceSupported="true" DeviceAccessSupported="true" NumberOfDeviceAccessAR="1" MaxSupportedRecordSize="8192" NameOfStationNotTransferable="true" ParameterizationSpeedupSupported="true" LLDP_NoD_Supported="true" ResetToFactoryModes="2" CheckDeviceID_Allowed="true" PowerOnToCommReady="490" IOXS_Required="false" RequiredSchemaVersion="V2.4" PNIO_Version="V2.42" PrmBeginPrmEndSequenceSupported="true"  CIR_Supported="true" AddressAssignment="LOCAL;DCP">
+					<ModuleInfo CategoryRef="ID_RZN2">
+						<Name TextId="TOK_Standard_MRP_S2_DR"/>
+						<InfoText TextId="TOK_ModInfo_InfoTextId_DAP8"/>
+						<VendorName Value="Renesas Electronics"/>
+						<OrderNumber Value="RSK-RZN2-PNIO-XXXX"/>
+						<HardwareRelease Value="100"/>
+						<SoftwareRelease Value="V1.4.1"/>
+					</ModuleInfo>
+					<CertificationInfo ConformanceClass="C" ApplicationClass="Isochronous" NetloadClass="III"/>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000"/>
+						<SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001"/>
+						<SubslotItem SubslotNumber="32770" TextId="TOK_Subslot_8002"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="1440" MaxOutputLength="1440" MaxDataLength="2880"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_01" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_02" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_03" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_10" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_11" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_12" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_16" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_17" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_18" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_50" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_51" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_52" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_53" AllowedInSlots="1..16"/>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_60" AllowedInSlots="1..16"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP 8" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" IM5_Supported="true" MayIssueProcessAlarm="false">
+							<IOData/> <ModuleInfo><Name TextId="TOK_Standard_MRP_S2_DR"/><InfoText TextId="TOK_ModInfo_InfoTextId_DAP8"/></ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="IDS_8I" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedDelayMeasurements="PTCP" IsochroneModeSupported="true" IsochroneModeInRT_Classes="RT_CLASS_3" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_3" TextId="TOK_DAP_InterfaceModule" SupportedProtocols="SNMP;LLDP" NetworkComponentDiagnosisSupported="true" PTP_BoundarySupported="true" DCP_BoundarySupported="true" MulticastBoundarySupported="true" DCP_HelloSupported="true" MaxFrameStartTime="1600" MinNRT_Gap="960" DelayMeasurementSupported="true" Writeable_IM_Records="1 2 3 4" IM5_Supported="true" PDEV_CombinedObjectSupported="true">						
+							<RT_Class3Properties ForwardingMode="Relative" MaxBridgeDelay="3960" MaxBridgeDelayFFW="1024" MaxNumberIR_FrameData="1024" MaxRangeIR_FrameID="1024" StartupMode="Legacy;Advanced" MaxDFP_Frames="0" FragmentationType="Static" MaxRedPeriodLength="4000" MinFSO="5000" MinRTC3_Gap="2000" MinYellowTime="100240" YellowSafetyMargin="160"/>
+							<SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="300" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP" PeerToPeerJitter="250"/>
+							<ApplicationRelations NumberOfAR="4" StartupMode="Legacy;Advanced" NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="true">
+							<TimingProperties ReductionRatio="1 2 4 8 16 32 64 128 256 512" SendClock="8 16 32 64 128"/>
+							<RT_Class3TimingProperties ReductionRatioPow2="2 4 8 16" SendClock="8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128" ReductionRatio="1"/>
+							</ApplicationRelations>
+                            <MediaRedundancy SupportedRole="Client" MRPD_Supported="false" AdditionalForwardingRulesSupported="true"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="IDS_8P1" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" TextId="TOK_Port1" MaxPortRxDelay="603" MaxPortTxDelay="427" IsDefaultRingport="true" MAUType="100BASETXFD" MAUTypes="16" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" ShortPreamble100MBitSupported="false" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true" Writeable_IM_Records="1 2 3 4" IM5_Supported="true">
+							<MAUTypeList>
+								<MAUTypeItem Value="16" AdjustSupported="true"/>
+							</MAUTypeList>
+						 </PortSubmoduleItem>
+						<PortSubmoduleItem ID="IDS_8P2" SubslotNumber="32770" SubmoduleIdentNumber="0x0003" TextId="TOK_Port2" MaxPortRxDelay="603" MaxPortTxDelay="427" IsDefaultRingport="true" MAUType="100BASETXFD" MAUTypes="16" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" ShortPreamble100MBitSupported="false" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true" Writeable_IM_Records="1 2 3 4" IM5_Supported="true">
+							<MAUTypeList>
+								<MAUTypeItem Value="16" AdjustSupported="true"/>
+							</MAUTypeList>
+						 </PortSubmoduleItem>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ID_Graph_8"/>
+					</Graphics>
+					<SystemRedundancy NumberOfAR_Sets="1" RT_InputOnBackupAR_Supported="false" MaxSwitchOverTime="30" DeviceTypes="S2" DeviceType="S2"/>
+				</DeviceAccessPointItem>
+			</DeviceAccessPointList>
+	        <!-- ============================================ -->
+	        <!--            List of modules                   -->
+	        <!-- ============================================ -->
+			<ModuleList>
+	            <!-- ================================== -->
+	            <!--    1 byte digital input/output     -->
+	            <!--   (param-rec, support PROFIenergy)-->
+	            <!-- ================================== -->
+				<ModuleItem ID="ID_Mod_01" ModuleIdentNumber="0x00000020">
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_1IO"/>
+						<InfoText TextId="TOK_InfoTextId_Module_1IO"/>
+						<!-- optional keyword:  <HardwareRelease Value="0002" />   -->
+						<!-- optional keyword:  <SoftwareRelease Value="V4.3" />  -->
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="1" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="true">
+							<IOData>
+								<Input Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Input_DataItem_1" Length="1" UseAsBits="true"/>
+								</Input>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Output_DataItem_1" Length="1" UseAsBits="true"/>
+								</Output>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="4" TransferSequence="0">
+									<Name TextId="T_general_parameter"/>
+									<Const Data="0x20,0x01,0x56,0x78" ByteOffset="0"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo><Name TextId="TOK_TextId_Module_1IO"/><InfoText TextId="TOK_InfoTextId_Module_1IO"/></ModuleInfo>
+							<PROFIenergy ProfileVersion="V1.1" EntityClass="Class3">
+								<EnergySavingModeList>
+									<EnergySavingModeItem ID="1" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="2" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="255" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+								</EnergySavingModeList>
+								<MeasurementList>
+									<MeasurementItem Number="0">
+										<MeasurementValue ID="13" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="1">
+										<MeasurementValue ID="14" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="2">
+										<MeasurementValue ID="15" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+								</MeasurementList>
+							</PROFIenergy>
+
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					
+				</ModuleItem>
+	            <!-- ================================== -->
+	            <!--         1 byte digital input       -->
+	            <!--         (support PROFIenergy)      -->
+	            <!-- ================================== -->
+				<ModuleItem ID="ID_Mod_02" ModuleIdentNumber="0x00000021">
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_1I"/>
+						<InfoText TextId="TOK_InfoTextId_Module_1I"/>
+						<!-- optional keyword:  <HardwareRelease Value="0002" />   -->
+						<!-- optional keyword:  <SoftwareRelease Value="V4.2" />  -->
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="2" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="true">
+							<IOData>
+								<Input Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Input_DataItem_1" Length="1" UseAsBits="true"/>
+								</Input>
+							</IOData><ModuleInfo><Name TextId="TOK_TextId_Module_1I"/><InfoText TextId="TOK_InfoTextId_Module_1I"/></ModuleInfo>
+							<PROFIenergy ProfileVersion="V1.1" EntityClass="Class3">
+								<EnergySavingModeList>
+									<EnergySavingModeItem ID="1" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="2" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="255" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+								</EnergySavingModeList>
+								<MeasurementList>
+									<MeasurementItem Number="0">
+										<MeasurementValue ID="13" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="1">
+										<MeasurementValue ID="14" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="2">
+										<MeasurementValue ID="15" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+								</MeasurementList>
+							</PROFIenergy>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+	            <!-- ================================== -->
+	            <!--       1 byte digital output        -->
+	            <!--         (support PROFIenergy)      -->
+	            <!-- ================================== -->
+				<ModuleItem ID="ID_Mod_03" ModuleIdentNumber="0x00000022">
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_1O"/>
+						<InfoText TextId="TOK_InfoTextId_Module_1O"/>
+						<!-- optional keyword:  <HardwareRelease Value="0002" />   -->
+						<!-- optional keyword:  <SoftwareRelease Value="V4.3" />  -->
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="3" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="false">
+							<IOData>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Output_DataItem_1" Length="1" UseAsBits="true"/>
+								</Output>
+							</IOData><ModuleInfo><Name TextId="TOK_TextId_Module_1O"/><InfoText TextId="TOK_InfoTextId_Module_1O"/></ModuleInfo>
+							<PROFIenergy ProfileVersion="V1.1" EntityClass="Class3">
+								<EnergySavingModeList>
+									<EnergySavingModeItem ID="1" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="2" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="255" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+								</EnergySavingModeList>
+								<MeasurementList>
+									<MeasurementItem Number="0">
+										<MeasurementValue ID="13" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="1">
+										<MeasurementValue ID="14" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="2">
+										<MeasurementValue ID="15" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+								</MeasurementList>
+							</PROFIenergy>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+	            <!-- ================================== -->
+	            <!--    64 byte digital input/output    -->
+	            <!--   (param-rec, support PROFIenergy) -->
+	            <!-- ================================== -->
+				<ModuleItem ID="ID_Mod_10" ModuleIdentNumber="0x00000029">
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_64IO"/>
+						<InfoText TextId="TOK_InfoTextId_Module_64IO"/>
+						<!-- optional keyword:  <HardwareRelease Value="0002" />   -->
+						<!-- optional keyword:  <SoftwareRelease Value="V4.3" />  -->
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="10" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="true">
+							<IOData>
+								<Input Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Input_DataItem_64" Length="64" UseAsBits="true"/>
+								</Input>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Output_DataItem_64" Length="64" UseAsBits="true"/>
+								</Output>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="4" TransferSequence="0">
+									<Name TextId="T_general_parameter"/>
+									<Const Data="0x29,0x01,0x56,0x78" ByteOffset="0"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo><Name TextId="TOK_TextId_Module_64IO"/><InfoText TextId="TOK_InfoTextId_Module_64IO"/></ModuleInfo>
+							<PROFIenergy ProfileVersion="V1.1" EntityClass="Class3">
+								<EnergySavingModeList>
+									<EnergySavingModeItem ID="1" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="2" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="255" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+								</EnergySavingModeList>
+								<MeasurementList>
+									<MeasurementItem Number="0">
+										<MeasurementValue ID="13" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="1">
+										<MeasurementValue ID="14" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="2">
+										<MeasurementValue ID="15" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+								</MeasurementList>
+							</PROFIenergy>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+	            <!-- ================================== -->
+	            <!--         64 byte digital input      -->
+	            <!--   (param-rec, support PROFIenergy) -->
+	            <!-- ================================== -->
+				<ModuleItem ID="ID_Mod_11" ModuleIdentNumber="0x00000030">
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_64I"/>
+						<InfoText TextId="TOK_InfoTextId_Module_64I"/>
+						<!-- optional keyword:  <HardwareRelease Value="0002" />   -->
+						<!-- optional keyword:  <SoftwareRelease Value="V4.3" />  -->
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="11" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="true">
+							<IOData>
+								<Input Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Input_DataItem_64" Length="64" UseAsBits="true"/>
+								</Input>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="4" TransferSequence="0">
+									<Name TextId="T_general_parameter"/>
+									<Const Data="0x30,0x01,0x56,0x78" ByteOffset="0"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo><Name TextId="TOK_TextId_Module_64I"/><InfoText TextId="TOK_InfoTextId_Module_64I"/></ModuleInfo>
+							<PROFIenergy ProfileVersion="V1.1" EntityClass="Class3">
+								<EnergySavingModeList>
+									<EnergySavingModeItem ID="1" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="2" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="255" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+								</EnergySavingModeList>
+								<MeasurementList>
+									<MeasurementItem Number="0">
+										<MeasurementValue ID="13" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="1">
+										<MeasurementValue ID="14" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="2">
+										<MeasurementValue ID="15" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+								</MeasurementList>
+							</PROFIenergy>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+	            <!-- ================================== -->
+	            <!--       64 byte digital output       -->
+	            <!--   (param-rec, support PROFIenergy) -->
+	            <!-- ================================== -->
+				<ModuleItem ID="ID_Mod_12" ModuleIdentNumber="0x00000031">
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_64O"/>
+						<InfoText TextId="TOK_InfoTextId_Module_64O"/>
+						<!-- optional keyword:  <HardwareRelease Value="0002" />   -->
+						<!-- optional keyword:  <SoftwareRelease Value="V4.3" />  -->
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="12" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="false">
+							<IOData>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Output_DataItem_64" Length="64" UseAsBits="true"/>
+								</Output>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="4" TransferSequence="0">
+									<Name TextId="T_general_parameter"/>
+									<Const Data="0x31,0x01,0x56,0x78" ByteOffset="0"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo><Name TextId="TOK_TextId_Module_64O"/><InfoText TextId="TOK_InfoTextId_Module_64O"/></ModuleInfo>
+							<PROFIenergy ProfileVersion="V1.1" EntityClass="Class3">
+								<EnergySavingModeList>
+									<EnergySavingModeItem ID="1" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="2" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="255" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+								</EnergySavingModeList>
+								<MeasurementList>
+									<MeasurementItem Number="0">
+										<MeasurementValue ID="13" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="1">
+										<MeasurementValue ID="14" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="2">
+										<MeasurementValue ID="15" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+								</MeasurementList>
+							</PROFIenergy>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+	            <!-- ================================== -->
+	            <!--      250 byte digital input/output       -->
+	            <!--         (support PROFIenergy)      -->
+	            <!-- ================================== -->
+				<ModuleItem ID="ID_Mod_16" ModuleIdentNumber="0x0000002d">
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_250IO"/>
+						<InfoText TextId="TOK_InfoTextId_Module_250IO"/>
+						<!-- optional keyword:  <HardwareRelease Value="0002" />   -->
+						<!-- optional keyword:  <SoftwareRelease Value="V4.3" />  -->
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="16" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="true">
+							<IOData>
+								<Input Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Input_DataItem_250" Length="250" UseAsBits="true"/>
+								</Input>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Output_DataItem_250" Length="250" UseAsBits="true"/>
+								</Output>
+							</IOData><ModuleInfo><Name TextId="TOK_TextId_Module_250IO"/><InfoText TextId="TOK_InfoTextId_Module_250IO"/></ModuleInfo>
+							<PROFIenergy ProfileVersion="V1.1" EntityClass="Class3">
+								<EnergySavingModeList>
+									<EnergySavingModeItem ID="1" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="2" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="255" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+								</EnergySavingModeList>
+								<MeasurementList>
+									<MeasurementItem Number="0">
+										<MeasurementValue ID="13" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="1">
+										<MeasurementValue ID="14" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="2">
+										<MeasurementValue ID="15" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+								</MeasurementList>
+							</PROFIenergy>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+	            <!-- ================================== -->
+	            <!--      250 byte digital input        -->
+	            <!--         (support PROFIenergy)      -->
+	            <!-- ================================== -->
+				<ModuleItem ID="ID_Mod_17" ModuleIdentNumber="0x0000002e">
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_250I"/>
+						<InfoText TextId="TOK_InfoTextId_Module_250I"/>
+						<!-- optional keyword:  <HardwareRelease Value="0002" />   -->
+						<!-- optional keyword:  <SoftwareRelease Value="V4.3" />  -->
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="17" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="true">
+							<IOData>
+								<Input Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Input_DataItem_250" Length="250" UseAsBits="true"/>
+								</Input>
+							</IOData><ModuleInfo><Name TextId="TOK_TextId_Module_250I"/><InfoText TextId="TOK_InfoTextId_Module_250I"/></ModuleInfo>
+							<PROFIenergy ProfileVersion="V1.1" EntityClass="Class3">
+								<EnergySavingModeList>
+									<EnergySavingModeItem ID="1" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="2" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="255" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+								</EnergySavingModeList>
+								<MeasurementList>
+									<MeasurementItem Number="0">
+										<MeasurementValue ID="13" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="1">
+										<MeasurementValue ID="14" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="2">
+										<MeasurementValue ID="15" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+								</MeasurementList>
+							</PROFIenergy>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+	            <!-- ================================== -->
+	            <!--      250 byte digital output       -->
+	            <!--         (support PROFIenergy)      -->
+	            <!-- ================================== -->
+				<ModuleItem ID="ID_Mod_18" ModuleIdentNumber="0x0000002f">
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_250O"/>
+						<InfoText TextId="TOK_InfoTextId_Module_250O"/>
+						<!-- optional keyword:  <HardwareRelease Value="0002" />   -->
+						<!-- optional keyword:  <SoftwareRelease Value="V4.3" />  -->
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="18" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="false">
+							<IOData>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Output_DataItem_250" Length="250" UseAsBits="true"/>
+								</Output>
+							</IOData><ModuleInfo><Name TextId="TOK_TextId_Module_250O"/><InfoText TextId="TOK_InfoTextId_Module_250O"/></ModuleInfo>
+							<PROFIenergy ProfileVersion="V1.1" EntityClass="Class3">
+								<EnergySavingModeList>
+									<EnergySavingModeItem ID="1" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="2" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="255" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+								</EnergySavingModeList>
+								<MeasurementList>
+									<MeasurementItem Number="0">
+										<MeasurementValue ID="13" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="1">
+										<MeasurementValue ID="14" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="2">
+										<MeasurementValue ID="15" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+								</MeasurementList>
+							</PROFIenergy>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+	            <!-- ===================================== -->
+	            <!--  64 byte digital input, isochronous   -->
+	            <!--         (support PROFIenergy)      -->
+	            <!-- ===================================== -->
+				<ModuleItem ID="ID_Mod_50" ModuleIdentNumber="0x00000050">
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_64I_Isochron"/>
+						<InfoText TextId="TOK_InfoTextId_Module_64I_Isochron"/>
+						<!-- optional keyword:  <HardwareRelease Value="0002" />   -->
+						<!-- optional keyword:  <SoftwareRelease Value="V4.3" />  -->
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="50" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="true">
+							<IOData>
+								<Input Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Input_DataItem_64_Isochron" Length="64" UseAsBits="true"/>
+								</Input>
+							</IOData><ModuleInfo><Name TextId="TOK_TextId_Module_64I_Isochron"/><InfoText TextId="TOK_InfoTextId_Module_64I_Isochron"/></ModuleInfo>
+              <IsochroneMode IsochroneModeRequired="false" T_DC_Base="1" T_DC_Max="128" T_DC_Min="4" T_IO_Base="1000" T_IO_InputMin="10" T_IO_OutputMin="40"/>
+							<!--<PROFIenergy ProfileVersion="V1.0"/> -->
+							<PROFIenergy ProfileVersion="V1.1" EntityClass="Class3">
+								<EnergySavingModeList>
+									<EnergySavingModeItem ID="1" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="2" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="255" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+								</EnergySavingModeList>
+								<MeasurementList>
+									<MeasurementItem Number="0">
+										<MeasurementValue ID="13" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="1">
+										<MeasurementValue ID="14" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="2">
+										<MeasurementValue ID="15" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+								</MeasurementList>
+							</PROFIenergy>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+	            <!-- ===================================== -->
+	            <!--  64 byte digital output, isochronous  -->
+	            <!--         (support PROFIenergy)         -->
+	            <!-- ===================================== -->
+				<ModuleItem ID="ID_Mod_51" ModuleIdentNumber="0x00000051">
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_64O_Isochron"/>
+						<InfoText TextId="TOK_InfoTextId_Module_64O_Isochron"/>
+						<!-- optional keyword:  <HardwareRelease Value="0002" />   -->
+						<!-- optional keyword:  <SoftwareRelease Value="V4.3" />  -->
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="51" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="false">
+							<IOData>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Output_DataItem_64_Isochron" Length="64" UseAsBits="true"/>
+								</Output>
+							</IOData><ModuleInfo><Name TextId="TOK_TextId_Module_64O_Isochron"/><InfoText TextId="TOK_InfoTextId_Module_64O_Isochron"/></ModuleInfo>
+							<IsochroneMode IsochroneModeRequired="false" T_DC_Base="1" T_DC_Max="128" T_DC_Min="4" T_IO_Base="1000" T_IO_InputMin="10" T_IO_OutputMin="40"/>
+							<!-- <PROFIenergy ProfileVersion="V1.0"/> -->
+							<PROFIenergy ProfileVersion="V1.1" EntityClass="Class3">
+								<EnergySavingModeList>
+									<EnergySavingModeItem ID="1" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="2" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="255" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+								</EnergySavingModeList>
+								<MeasurementList>
+									<MeasurementItem Number="0">
+										<MeasurementValue ID="13" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="1">
+										<MeasurementValue ID="14" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="2">
+										<MeasurementValue ID="15" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+								</MeasurementList>
+							</PROFIenergy>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+	            <!-- ===================================== -->
+	            <!--  1 byte digital input, isochronous   -->
+	            <!--         (support PROFIenergy)      -->
+	            <!-- ===================================== -->
+				<ModuleItem ID="ID_Mod_52" ModuleIdentNumber="0x00000052">
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_1I_Isochron"/>
+						<InfoText TextId="TOK_InfoTextId_Module_1I_Isochron"/>
+						<!-- optional keyword:  <HardwareRelease Value="0002" />   -->
+						<!-- optional keyword:  <SoftwareRelease Value="V4.3" />  -->
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="52" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="true">
+							<IOData>
+								<Input Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Input_DataItem_1_Isochron" Length="1" UseAsBits="true"/>
+								</Input>
+							</IOData><ModuleInfo><Name TextId="TOK_TextId_Module_1I_Isochron"/><InfoText TextId="TOK_InfoTextId_Module_1I_Isochron"/></ModuleInfo>
+							<IsochroneMode IsochroneModeRequired="false" T_DC_Base="1" T_DC_Max="128" T_DC_Min="4" T_IO_Base="1000" T_IO_InputMin="10" T_IO_OutputMin="40"/>
+							<PROFIenergy ProfileVersion="V1.1" EntityClass="Class3">
+								<EnergySavingModeList>
+									<EnergySavingModeItem ID="1" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="2" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="255" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+								</EnergySavingModeList>
+								<MeasurementList>
+									<MeasurementItem Number="0">
+										<MeasurementValue ID="13" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="1">
+										<MeasurementValue ID="14" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="2">
+										<MeasurementValue ID="15" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+								</MeasurementList>
+							</PROFIenergy>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+	            <!-- ===================================== -->
+	            <!--  1 byte digital output, isochronous  -->
+	            <!--         (support PROFIenergy)         -->
+	            <!-- ===================================== -->
+				<ModuleItem ID="ID_Mod_53" ModuleIdentNumber="0x00000053">
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_1O_Isochron"/>
+						<InfoText TextId="TOK_InfoTextId_Module_1O_Isochron"/>
+						<!-- optional keyword:  <HardwareRelease Value="0002" />   -->
+						<!-- optional keyword:  <SoftwareRelease Value="V4.3" />  -->
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="53" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="false">
+							<IOData>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Output_DataItem_1_Isochron" Length="1" UseAsBits="true"/>
+								</Output>
+							</IOData><ModuleInfo><Name TextId="TOK_TextId_Module_1O_Isochron"/><InfoText TextId="TOK_InfoTextId_Module_1O_Isochron"/></ModuleInfo>
+							<IsochroneMode IsochroneModeRequired="false" T_DC_Base="1" T_DC_Max="128" T_DC_Min="4" T_IO_Base="1000" T_IO_InputMin="10" T_IO_OutputMin="40"/>
+							<PROFIenergy ProfileVersion="V1.1" EntityClass="Class3">
+								<EnergySavingModeList>
+									<EnergySavingModeItem ID="1" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="2" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+									<EnergySavingModeItem ID="255" TimeToPause="600" RTTO="600" TimeMinLengthOfStay="200"/>
+								</EnergySavingModeList>
+								<MeasurementList>
+									<MeasurementItem Number="0">
+										<MeasurementValue ID="13" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="1">
+										<MeasurementValue ID="14" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+									<MeasurementItem Number="2">
+										<MeasurementValue ID="15" AccuracyDomain="1" AccuracyClass="3"/>
+									</MeasurementItem>
+								</MeasurementList>
+							</PROFIenergy>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+	            <!-- ========================================================= -->
+	            <!--  Multi API input module   ModuleID 0x60                   -->
+	            <!-- ========================================================= -->
+				<ModuleItem ID="ID_Mod_60" ModuleIdentNumber="0x00000060">
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_MultiSub"/>
+						<InfoText TextId="TOK_InfoTextId_Module_MultiSub"/>
+						<!-- optional keyword:  <HardwareRelease Value="0002" />   -->
+						<!-- optional keyword:  <SoftwareRelease Value="V4.3" />  -->
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="601" SubmoduleIdentNumber="0x0001" FixedInSubslots="1" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="true">
+							<IOData>
+								<Input Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Input_DataItem_1" Length="1" UseAsBits="true"/>
+								</Input>
+							</IOData>
+							<ModuleInfo><Name TextId="TOK_TextId_MultiSub1I"/><InfoText TextId="TOK_InfoTextId_MultiSub1I"/></ModuleInfo>
+						</VirtualSubmoduleItem>
+						<VirtualSubmoduleItem ID="602" SubmoduleIdentNumber="0x0001" FixedInSubslots="2" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="true">
+							<IOData>
+								<Input Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Input_DataItem_1" Length="1" UseAsBits="true"/>
+								</Input>
+							</IOData>
+							<ModuleInfo><Name TextId="TOK_TextId_MultiSub1I"/><InfoText TextId="TOK_InfoTextId_MultiSub1I"/></ModuleInfo>
+						</VirtualSubmoduleItem>
+						<VirtualSubmoduleItem ID="603" SubmoduleIdentNumber="0x0002" FixedInSubslots="3" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="false">
+							<IOData>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Output_DataItem_1" Length="1" UseAsBits="true"/>
+								</Output>
+							</IOData>
+							<ModuleInfo><Name TextId="TOK_TextId_MultiSub1O"/><InfoText TextId="TOK_InfoTextId_MultiSub1O"/></ModuleInfo>
+						</VirtualSubmoduleItem>
+						<VirtualSubmoduleItem ID="604" SubmoduleIdentNumber="0x0002" FixedInSubslots="4" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="false">
+							<IOData>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="TOK_Output_DataItem_1" Length="1" UseAsBits="true"/>
+								</Output>
+							</IOData>
+							<ModuleInfo><Name TextId="TOK_TextId_MultiSub1O"/><InfoText TextId="TOK_InfoTextId_MultiSub1O"/></ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+			</ModuleList>
+	        <!-- ============================================ -->
+	        <!--       Channel diagnosis list                 -->
+	        <!-- ============================================ -->
+			<ChannelDiagList>
+				<ChannelDiagItem ErrorType="16">
+					<Name TextId="TOK_Name_ErrorType16"/>
+					<Help TextId="TOK_HelpName_ErrorType16"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="17">
+					<Name TextId="TOK_Name_ErrorType17"/>
+					<Help TextId="TOK_HelpName_ErrorType17"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="18">
+					<Name TextId="TOK_Name_ErrorType18"/>
+					<Help TextId="TOK_HelpName_ErrorType18"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="20">
+					<Name TextId="TOK_Name_ErrorType20"/>
+					<Help TextId="TOK_HelpName_ErrorType20"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="21">
+					<Name TextId="TOK_Name_ErrorType21"/>
+					<Help TextId="TOK_HelpName_ErrorType21"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="22">
+					<Name TextId="TOK_Name_ErrorType22"/>
+					<Help TextId="TOK_HelpName_ErrorType22"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="23">
+					<Name TextId="TOK_Name_ErrorType23"/>
+					<Help TextId="TOK_HelpName_ErrorType23"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24">
+					<Name TextId="TOK_Name_ErrorType24"/>
+					<Help TextId="TOK_HelpName_ErrorType24"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="25">
+					<Name TextId="TOK_Name_ErrorType25"/>
+					<Help TextId="TOK_HelpName_ErrorType25"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="26">
+					<Name TextId="TOK_Name_ErrorType26"/>
+					<Help TextId="TOK_HelpName_ErrorType26"/>
+				</ChannelDiagItem>
+			</ChannelDiagList>
+			<GraphicsList>
+				<GraphicItem ID="ID_Graph_1" GraphicFile="GSDML-02C7-0003-RZN2-RSK"/>
+				<GraphicItem ID="ID_Graph_2" GraphicFile="GSDML-02C7-0003-RZN2-RSK"/>
+				<GraphicItem ID="ID_Graph_3" GraphicFile="GSDML-02C7-0003-RZN2-RSK"/>
+				<GraphicItem ID="ID_Graph_4" GraphicFile="GSDML-02C7-0003-RZN2-RSK"/>
+				<GraphicItem ID="ID_Graph_7" GraphicFile="GSDML-02C7-0003-RZN2-RSK"/>
+				<GraphicItem ID="ID_Graph_8" GraphicFile="GSDML-02C7-0003-RZN2-RSK"/>
+			</GraphicsList>
+			<CategoryList>
+				<CategoryItem ID="ID_RZN2" TextId="TOK_Category_RZN2"/>	
+			</CategoryList>
+	        <!-- ============================================ -->
+	        <!--     language dependent text lists            -->
+	        <!-- ============================================ -->
+			<ExternalTextList>
+	            <!-- ============================= -->
+	            <!--    primary language: english  -->
+	            <!-- ============================= -->
+				<PrimaryLanguage>
+					<Text TextId="TOK_Category_RZN2" Value="RZN2 PROFINET IRT DEVKIT"/>
+					<Text TextId="TOK_DevIdent_InfoText" Value="RZN2 PROFINET IRT DEVKIT"/>
+					
+					<!--DAP - Renesas PROFINET IRT DEVKIT-->
+					<Text TextId="TOK_Standard_no_PDEV" Value="Standard, no PDEV"/>
+					<Text TextId="TOK_Standard_no_MRP" Value="Standard, no MRP"/>
+					<Text TextId="TOK_Standard_MRP" Value="Standard, MRP"/>
+					<Text TextId="TOK_Standard_1Port" Value="Standard, 1 port"/>
+					<Text TextId="TOK_Standard_POF" Value="Standard, POF Port"/>
+					<Text TextId="TOK_Standard_2POF" Value="Standard, 2 POF Ports"/>
+					<Text TextId="TOK_Standard_MRP_S2" Value="Standard, MRP, S2 redundancy"/>
+					<Text TextId="TOK_Standard_MRP_S2_DR" Value="Standard, MRP, S2 redundancy, DR"/>
+					
+					<Text TextId="TOK_ModInfo_InfoTextId_DAP1" Value="RZN2 PROFINET IRT DEVKIT, for pnio ontroller without physical device"/>
+					<Text TextId="TOK_ModInfo_InfoTextId_DAP2" Value="RZN2 PROFINET IRT DEVKIT, standard, no MRP, shared device"/>
+					<Text TextId="TOK_ModInfo_InfoTextId_DAP3" Value="RZN2 PROFINET IRT DEVKIT, standard, MRP, shared device"/>
+					<Text TextId="TOK_ModInfo_InfoTextId_DAP4" Value="RZN2 PROFINET IRT DEVKIT, standard, 1 port, shared device"/>
+					<Text TextId="TOK_ModInfo_InfoTextId_DAP7" Value="RZN2 PROFINET IRT DEVKIT, standard, MRP, system redundancy"/>
+					<Text TextId="TOK_ModInfo_InfoTextId_DAP8" Value="RZN2 PROFINET IRT DEVKIT, standard, MRP, system redundancy, dynamic reconfiguration"/>
+					
+					<!--port name-->
+					<Text TextId="TOK_Subslot_8000" Value="X1"/>
+					<Text TextId="TOK_Subslot_8001" Value="X1 P1"/>
+					<Text TextId="TOK_Subslot_8002" Value="X1 P2"/>
+					<Text TextId="TOK_DAP_InterfaceModule" Value="PN-IO"/>
+					<Text TextId="TOK_Port1" Value="Port 1"/>
+					<Text TextId="TOK_Port2" Value="Port 2"/>
+					<!--module name-->
+					<Text TextId="TOK_TextId_Module_1IO" Value="  1 byte  IO"/>
+					<Text TextId="TOK_TextId_Module_1I" Value="  1 byte  I"/>
+					<Text TextId="TOK_TextId_Module_1O" Value="  1 byte  O"/>
+					<Text TextId="TOK_TextId_Module_64IO" Value=" 64 bytes IO"/>
+					<Text TextId="TOK_TextId_Module_64I" Value=" 64 bytes I"/>
+					<Text TextId="TOK_TextId_Module_64O" Value=" 64 bytes O"/>
+					<Text TextId="TOK_TextId_Module_250IO" Value="250 bytes IO"/>
+					<Text TextId="TOK_TextId_Module_250I" Value="250 bytes I"/>
+					<Text TextId="TOK_TextId_Module_250O" Value="250 bytes O"/>
+					<Text TextId="TOK_TextId_Module_64I_Isochron" Value=" 64 bytes I IRT"/>
+					<Text TextId="TOK_TextId_Module_64O_Isochron" Value=" 64 bytes O IRT"/>
+					<Text TextId="TOK_TextId_Module_1I_Isochron" Value=" 1 byte I IRT"/>
+					<Text TextId="TOK_TextId_Module_1O_Isochron" Value=" 1 byte O IRT"/>
+					<Text TextId="TOK_TextId_Module_MultiSub" Value=" multi subslots 1I 1I 1O 1O"/>
+					<Text TextId="TOK_TextId_MultiSub1I" Value="  1 byte  I"/>
+					<Text TextId="TOK_TextId_MultiSub1O" Value="  1 byte  O"/>
+					<!--module info name-->
+					<Text TextId="TOK_InfoTextId_Module_1IO" Value="1 byte IO (overall consistency) - ModuleIdentNumber:0x20 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_1I" Value="1 byte I (overall consistency) - ModuleIdentNumber:0x21 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_1O" Value="1 byte O (overall consistency) - ModuleIdentNumber:0x22 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_64IO" Value="64 bytes IO (overall consistency) - ModuleIdentNumber:0x29 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_64I" Value="64 bytes I (overall consistency) - ModuleIdentNumber:0x30 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_64O" Value="64 bytes O (overall consistency) - ModuleIdentNumber:0x31 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_250IO" Value="250 bytes IO (overall consistency) - ModuleIdentNumber:0x2D - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_250I" Value="250 bytes I (overall consistency) - ModuleIdentNumber:0x2E - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_250O" Value="250 bytes O (overall consistency) - ModuleIdentNumber:0x2F - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_64I_Isochron" Value="64 bytes I (isochrone, overall consistency) - ModuleIdentNumber:0x50 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_64O_Isochron" Value="64 bytes O (isochrone, overall consistency) - ModuleIdentNumber:0x51 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_1I_Isochron" Value="1 byte I (isochrone, overall consistency) - ModuleIdentNumber:0x52 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_1O_Isochron" Value="1 byte O (isochrone, overall consistency) - ModuleIdentNumber:0x53 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_MultiSub" Value="1 byte I + 1 byte I + 1 byte O + 1 byte O - ModuleIdentNumber:0x60"/>
+					<Text TextId="TOK_InfoTextId_MultiSub1I" Value="1 byte I (overall consistency) - SubmoduleIdentNumber:0x0001 - API:0x00"/>
+					<Text TextId="TOK_InfoTextId_MultiSub1O" Value="1 byte O (overall consistency) - SubmoduleIdentNumber:0x0002 - API:0x00"/>
+					<!--dataitem name-->
+					<Text TextId="TOK_Input_DataItem_1" Value="Input 1 byte"/>
+					<Text TextId="TOK_Output_DataItem_1" Value="Output 1 byte"/>
+					<Text TextId="TOK_Input_DataItem_64" Value="Input 64 bytes"/>
+					<Text TextId="TOK_Output_DataItem_64" Value="Output 64 bytes"/>
+					<Text TextId="TOK_Input_DataItem_250" Value="Input 250 bytes"/>
+					<Text TextId="TOK_Output_DataItem_250" Value="Output 250 bytes"/>
+					<Text TextId="TOK_Input_DataItem_64_Isochron" Value="Input 64 bytes IRT"/>
+					<Text TextId="TOK_Output_DataItem_64_Isochron" Value="Output 64 bytes IRT"/>
+					<Text TextId="TOK_Input_DataItem_1_Isochron" Value="Input 1 byte IRT"/>
+					<Text TextId="TOK_Output_DataItem_1_Isochron" Value="Output 1 byte IRT"/>
+					<!--errortype name-->
+					<Text TextId="TOK_Name_ErrorType16" Value="parameter assignment error"/>
+					<Text TextId="TOK_Name_ErrorType17" Value="Power supply fault "/>
+					<Text TextId="TOK_Name_ErrorType18" Value="fuse blown  "/>
+					<Text TextId="TOK_Name_ErrorType20" Value="ground fault"/>
+					<Text TextId="TOK_Name_ErrorType21" Value="reference point lost"/>
+					<Text TextId="TOK_Name_ErrorType22" Value="process event lost / sampling error"/>
+					<Text TextId="TOK_Name_ErrorType23" Value="threshold warning"/>
+					<Text TextId="TOK_Name_ErrorType24" Value="output disabled"/>
+					<Text TextId="TOK_Name_ErrorType25" Value="safety-related event "/>
+					<Text TextId="TOK_Name_ErrorType26" Value="external fault"/>
+					<Text TextId="TOK_HelpName_ErrorType16" Value="parameter assignment error"/>
+					<Text TextId="TOK_HelpName_ErrorType17" Value="Power supply fault "/>
+					<Text TextId="TOK_HelpName_ErrorType18" Value="fuse blown  "/>
+					<Text TextId="TOK_HelpName_ErrorType20" Value="ground fault"/>
+					<Text TextId="TOK_HelpName_ErrorType21" Value="reference point lost"/>
+					<Text TextId="TOK_HelpName_ErrorType22" Value="process event lost / sampling error"/>
+					<Text TextId="TOK_HelpName_ErrorType23" Value="threshold warning"/>
+					<Text TextId="TOK_HelpName_ErrorType24" Value="output disabled"/>
+					<Text TextId="TOK_HelpName_ErrorType25" Value="safety-related event "/>
+					<Text TextId="TOK_HelpName_ErrorType26" Value="external fault"/>
+					<!--other text definitions-->
+					<Text TextId="T_general_parameter" Value="general parameter"/>
+				</PrimaryLanguage>
+	            <!-- ==================== -->
+	            <!--      german          -->
+	            <!-- ==================== -->
+				<Language xml:lang="de">
+					<Text TextId="TOK_Category_RZN2" Value="RZN2 PROFINET IRT DEVKIT"/>
+					<Text TextId="TOK_DevIdent_InfoText" Value="RZN2 PROFINET IRT DEVKIT"/>
+					
+					<!--DAP - Renesas PROFINET IRT DEVKIT-->
+					<Text TextId="TOK_Standard_no_PDEV" Value="Standard, kein PDEV"/>
+					<Text TextId="TOK_Standard_no_MRP" Value="Standard, kein MRP"/>
+					<Text TextId="TOK_Standard_MRP" Value="Standard, MRP"/>
+					<Text TextId="TOK_Standard_1Port" Value="Standard, 1 port"/>
+					<Text TextId="TOK_Standard_POF" Value="Standard, POF Port"/>
+					<Text TextId="TOK_Standard_2POF" Value="Standard, 2 POF Ports"/>
+					<Text TextId="TOK_Standard_MRP_S2" Value="Standard, MRP, S2 redundancy"/>
+					<Text TextId="TOK_Standard_MRP_S2_DR" Value="Standard, MRP, S2 redundancy, DR"/>
+					
+					<Text TextId="TOK_ModInfo_InfoTextId_DAP1" Value="RZN2 PROFINET IRT DEVKIT, f�r PNIO Controller ohne Physical Device"/>
+					<Text TextId="TOK_ModInfo_InfoTextId_DAP2" Value="RZN2 PROFINET IRT DEVKIT, Standard, kein MRP, Shared Device"/>
+					<Text TextId="TOK_ModInfo_InfoTextId_DAP3" Value="RZN2 PROFINET IRT DEVKIT, Standard, MRP, Shared Device"/>
+					<Text TextId="TOK_ModInfo_InfoTextId_DAP4" Value="RZN2 PROFINET IRT DEVKIT, Standard, 1 Port, Shared Device"/>
+					<Text TextId="TOK_ModInfo_InfoTextId_DAP7" Value="RZN2 PROFINET IRT DEVKIT, standard, MRP, system redundancy"/>
+					<Text TextId="TOK_ModInfo_InfoTextId_DAP8" Value="RZN2 PROFINET IRT DEVKIT, standard, MRP, system redundancy, dynamic reconfiguration"/>
+
+					<!--port name-->
+					<Text TextId="TOK_Subslot_8000" Value="X1"/>
+					<Text TextId="TOK_Subslot_8001" Value="X1 P1"/>
+					<Text TextId="TOK_Subslot_8002" Value="X1 P2"/>
+					<Text TextId="TOK_DAP_InterfaceModule" Value="PN-IO"/>
+					<Text TextId="TOK_Port1" Value="Port 1"/>
+					<Text TextId="TOK_Port2" Value="Port 2"/>
+					<!--module name-->
+					<Text TextId="TOK_TextId_Module_1IO" Value="  1 Byte  EA"/>
+					<Text TextId="TOK_TextId_Module_1I" Value="  1 Byte  E"/>
+					<Text TextId="TOK_TextId_Module_1O" Value="  1 Byte  A"/>
+					<Text TextId="TOK_TextId_Module_64IO" Value=" 64 Byte  EA"/>
+					<Text TextId="TOK_TextId_Module_64I" Value=" 64 Byte  E"/>
+					<Text TextId="TOK_TextId_Module_64O" Value=" 64 Byte  A"/>
+					<Text TextId="TOK_TextId_Module_250IO" Value="250 Byte  EA"/>
+					<Text TextId="TOK_TextId_Module_250I" Value="250 Byte  E"/>
+					<Text TextId="TOK_TextId_Module_250O" Value="250 Byte  A"/>
+					<Text TextId="TOK_TextId_Module_64I_Isochron" Value=" 64 bytes E IRT"/>
+					<Text TextId="TOK_TextId_Module_64O_Isochron" Value=" 64 bytes A IRT"/>
+					<Text TextId="TOK_TextId_Module_1I_Isochron" Value=" 1 byte E IRT"/>
+					<Text TextId="TOK_TextId_Module_1O_Isochron" Value=" 1 byte A IRT"/>
+					<Text TextId="TOK_TextId_Module_MultiSub" Value=" Multi Subslots 1E 1E 1A 1A"/>
+					<Text TextId="TOK_TextId_MultiSub1I" Value="  1 Byte  E"/>
+					<Text TextId="TOK_TextId_MultiSub1O" Value="  1 Byte  A"/>
+					<!--module info name-->
+					<Text TextId="TOK_InfoTextId_Module_1IO" Value="1 Byte EA (Gesamtkonsistenz) - ModuleIdentNumber:0x20 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_1I" Value="1 Byte E (Gesamtkonsistenz) - ModuleIdentNumber:0x21 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_1O" Value="1 Byte A (Gesamtkonsistenz) - ModuleIdentNumber:0x22 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_64IO" Value="64 Byte EA (Gesamtkonsistenz) - ModuleIdentNumber:0x29 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_64I" Value="64 Byte E (Gesamtkonsistenz) - ModuleIdentNumber:0x30 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_64O" Value="64 Byte A (Gesamtkonsistenz) - ModuleIdentNumber:0x31 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_250IO" Value="250 Byte EA (Gesamtkonsistenz) - ModuleIdentNumber:0x2D - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_250I" Value="250 Byte E (Gesamtkonsistenz) - ModuleIdentNumber:0x2E - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_250O" Value="250 Byte A (Gesamtkonsistenz) - ModuleIdentNumber:0x2F - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_64I_Isochron" Value="64 bytes I (isochron, Gesamtkonsistenz) - ModuleIdentNumber:0x50 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_64O_Isochron" Value="64 bytes O (isochron, Gesamtkonsistenz) - ModuleIdentNumber:0x51 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_1I_Isochron" Value="1 bytes I (isochron, Gesamtkonsistenz) - ModuleIdentNumber:0x52 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<Text TextId="TOK_InfoTextId_Module_1O_Isochron" Value="1 bytes O (isochron, Gesamtkonsistenz) - ModuleIdentNumber:0x53 - SubmoduleIdentNumber:0x0001 - API:0x00 - PROFIenergy"/>
+					<!--dataitem name-->
+					<Text TextId="TOK_Input_DataItem_1" Value="Eingang 1 Byte"/>
+					<Text TextId="TOK_Output_DataItem_1" Value="Ausgang 1 Byte"/>
+					<Text TextId="TOK_Input_DataItem_64" Value="Eingang 64 Byte"/>
+					<Text TextId="TOK_Output_DataItem_64" Value="Ausgang 64 Byte"/>
+					<Text TextId="TOK_Input_DataItem_250" Value="Eingang 250 Byte"/>
+					<Text TextId="TOK_Output_DataItem_250" Value="Ausgang 250 Byte"/>
+					<Text TextId="TOK_Input_DataItem_64_Isochron" Value="Eingang 64 Byte IRT"/>
+					<Text TextId="TOK_Output_DataItem_64_Isochron" Value="Ausgang 64 Byte IRT"/>
+					<Text TextId="TOK_Input_DataItem_1_Isochron" Value="Eingang 1 Byte IRT"/>
+					<Text TextId="TOK_Output_DataItem_1_Isochron" Value="Ausgang 1 Byte IRT"/>
+					<Text TextId="TOK_InfoTextId_Module_MultiSub" Value="1 Byte E + 1 Byte E + 1 Byte A + 1 Byte A - ModuleIdentNumber:0x60"/>
+					<Text TextId="TOK_InfoTextId_MultiSub1I" Value="1 Byte E (Gesamtkonsistenz) - ModuleIdentNumber:0x60 - SubmoduleIdentNumber:0x0001 - API:0x00"/>
+					<Text TextId="TOK_InfoTextId_MultiSub1O" Value="B byte A (Gesamtkonsistenz) - ModuleIdentNumber:0x60 - SubmoduleIdentNumber:0x0002 - API:0x00"/>
+					<!--errortype name-->
+					<Text TextId="TOK_Name_ErrorType16" Value="Parametrierfehler"/>
+					<Text TextId="TOK_Name_ErrorType17" Value="Stromversorgungsfehler"/>
+					<Text TextId="TOK_Name_ErrorType18" Value="Sicherungsfall"/>
+					<Text TextId="TOK_Name_ErrorType20" Value="Massefehler"/>
+					<Text TextId="TOK_Name_ErrorType21" Value="Referenzpunkt verloren"/>
+					<Text TextId="TOK_Name_ErrorType22" Value="Prozessereignis verloren /Abtastfehler"/>
+					<Text TextId="TOK_Name_ErrorType23" Value="Schwellwert-Warnung"/>
+					<Text TextId="TOK_Name_ErrorType24" Value="Ausgang deaktiviert "/>
+					<Text TextId="TOK_Name_ErrorType25" Value="Ereignis mit Sicherheitsbezug"/>
+					<Text TextId="TOK_Name_ErrorType26" Value="externer Fehler"/>
+					<Text TextId="TOK_HelpName_ErrorType16" Value="Parametrierfehler"/>
+					<Text TextId="TOK_HelpName_ErrorType17" Value="Stromversorgungsfehler"/>
+					<Text TextId="TOK_HelpName_ErrorType18" Value="Sicherungsfall"/>
+					<Text TextId="TOK_HelpName_ErrorType20" Value="Massefehler"/>
+					<Text TextId="TOK_HelpName_ErrorType21" Value="Referenzpunkt verloren"/>
+					<Text TextId="TOK_HelpName_ErrorType22" Value="Prozessereignis verloren /Abtastfehler"/>
+					<Text TextId="TOK_HelpName_ErrorType23" Value="Schwellwert-Warnung"/>
+					<Text TextId="TOK_HelpName_ErrorType24" Value="Ausgang deaktiviert "/>
+					<Text TextId="TOK_HelpName_ErrorType25" Value="Ereignis mit Sicherheitsbezug"/>
+					<Text TextId="TOK_HelpName_ErrorType26" Value="externer Fehler"/>
+					<!--other text definitions-->
+					<Text TextId="T_general_parameter" Value="Allgemeiner Parameter"/>
+				</Language>
+			</ExternalTextList>
+		</ApplicationProcess>
+	</ProfileBody>
+</ISO15745Profile>
