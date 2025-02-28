@@ -1,0 +1,13 @@
+"C:\Program Files\IAR Systems\Embedded Workbench 9.2_2\arm\bin\armPROC.dll" 
+
+"C:\Program Files\IAR Systems\Embedded Workbench 9.2_2\arm\bin\armJLINK.dll" 
+
+"C:\Users\a5138936\Desktop\RTT_BOARD\03_RZN2L  PROFINET开发-----基于Etherkit 开发板.pdf等6个文件\01_quickstart\01_quick\01_quickstart_IAR\Debug\Exe\N2L_QuickStart.out" 
+
+--plugin="C:\Program Files\IAR Systems\Embedded Workbench 9.2_2\arm\bin\armLibSupportUniversal.dll" 
+
+--device_macro="C:\Program Files\IAR Systems\Embedded Workbench 9.2_2\arm/config/debugger/Renesas/RZN2L.dmac" 
+
+
+
+
