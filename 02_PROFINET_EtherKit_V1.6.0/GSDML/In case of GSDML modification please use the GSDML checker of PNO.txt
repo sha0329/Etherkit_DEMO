@@ -1,3 +1,0 @@
-The GSDML ckecker is availible for all PI members free of charge and can be found here:
-
-https://www.profibus.com/download/profinet-gsd-checker
